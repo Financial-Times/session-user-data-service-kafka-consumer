@@ -1,0 +1,24 @@
+{
+  "name":"email-users-kafka-consumer",
+  "scripts":{},
+  "env":{
+    "LOG_LEVEL":{
+      "required":true
+    },
+    "NODE_ENV":{
+      "required":true
+    },
+    "SENTRY_DSN":{
+      "required":true
+    },
+    "USER_LISTS_ENDPOINT":{
+      "required":true
+    },
+    "ZOOKEEPER_HOSTS":{
+      "required":true
+    }
+  },
+  "addons":[
+    "papertrail"
+  ]
+}
