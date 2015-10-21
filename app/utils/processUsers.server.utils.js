@@ -4,7 +4,7 @@ const async = require('async');
 
 const config = require('../../config/config');
 const emailsMapSingleton = require('../services/emailsMap.services.server');
-const usersListsClient = require('../services/usersListsClient.server.services');
+const sudsClient = require('../services/sudsClient.server.services');
 const logger = require('../../config/logger');
 
 const loggerId = 'SERVER:' + config.processId;
@@ -33,7 +33,7 @@ function updateOrCreateUser(user, callback) {
 	let userBeingSent = JSON.parse(JSON.stringify(user));
 
 	// We attempt to edit the user
-	usersListsClient.updateOrCreateUser(user)
+	sudsClient.updateOrCreateUser(user)
 		.then(() => {
 			logger.debug(loggerId, 'User updated', {user: user.uuid});
 			deleteFromMapIfUnchanged(userBeingSent);

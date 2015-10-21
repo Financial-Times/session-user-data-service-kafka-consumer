@@ -7,7 +7,8 @@ const consumerGroupId = process.env.CONSUMER_GROUP_ID || 'dev-session-user-data-
 const consumerTopic = 'membership_users_v1';
 const port = process.env.PORT || 1339;
 
-const userListsEndpoint = process.env.USER_LISTS_ENDPOINT;
+const sudsUpdateUserEndpoint = process.env.SUDS_UPDATE_USER_ENDPOINT;
+const sudsApiKey = process.env.SUDS_API_KEY;
 
 module.exports = {
     port: port,
@@ -16,5 +17,6 @@ module.exports = {
     zookeeperHosts: zookeeperHosts,
     consumerTopic: consumerTopic,
     consumerGroupId: consumerGroupId,
-    userListsEndpoint: userListsEndpoint
+    userListsEndpoint: sudsUpdateUserEndpoint,
+    sudsApiKey: sudsApiKey
 };
