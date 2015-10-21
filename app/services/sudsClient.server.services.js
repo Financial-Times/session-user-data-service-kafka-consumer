@@ -20,7 +20,9 @@ exports.updateOrCreateUser = (user) => {
             lastName: user.lastName
         });
 
-        fetch(config.userListsEndpoint + '/' + user.uuid, {
+        stringBody.apiKey = config.sudsApiKey;
+
+        fetch(config.sudsUpdateUserEndpoint + '/' + user.uuid, {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
